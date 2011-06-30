@@ -1,0 +1,6 @@
+category: Audio Video
+requires: liba52_0 libass4 libavcodec52 libavformat52 libavutil50 libbs2b0 libcdio_cdda0 libcdio_paranoia0 libdca0 libdirac0 libdv4 libdvdread4 libfaad2 libfontconfig1 libfreetype6 libfribidi0 libgif4 libGL1 libiconv2 libjpeg8 libmad0 libmng1 libmpg123_0 libnut0 libogg0 libpng14 libpostproc51 libSDL1.2_0 libspeex1 libswscale0 libtheora0 libvorbis0 libX11_6 libXext6 libXinerama1 libXss1 libxvidcore4 zlib0
+sdesc: "Multimedia player"
+ldesc: "mplayer2 is an advanced general-purpose video player. A fork of the
+original MPlayer project, it contains significant further development and
+supports a number of features not available in other Unix players."
