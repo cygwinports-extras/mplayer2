@@ -70,7 +70,6 @@ myconf="
   --disable-alsa
   --disable-coreaudio
   --disable-dart
-  --disable-esd
   --disable-jack
   --disable-kai
   --disable-pulse
@@ -94,8 +93,7 @@ src_compile() {
 	lndirs
 	cd ${B}
 	# http://lists.mplayerhq.hu/pipermail/mplayer-dev-eng/2006-November/047222.html
-	# -fno-common: http://gcc.gnu.org/bugzilla/show_bug.cgi?id=37216
-	CFLAGS+=" -finline-functions -fomit-frame-pointer"
+	CFLAGS+=" -fomit-frame-pointer"
 	verbose ${S}/configure \
 		${myconf} \
 		|| error "configure failed"
