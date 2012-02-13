@@ -1,7 +1,10 @@
+GIT_URI="git://git.mplayer2.org/mplayer2.git"
+inherit git
+
 DESCRIPTION="Multimedia player (fork of MPlayer)"
 HOMEPAGE="http://www.mplayer2.org/"
-SRC_URI="http://ftp.mplayer2.org/pub/release/${P}.tar.xz"
-PATCH_URI="2.0-cygwin.patch"
+#SRC_URI="http://ftp.mplayer2.org/pub/release/${P}.tar.xz"
+PATCH_URI="20120128-cygwin.patch"
 
 # generally only disable undesired components; let autodetect do the rest
 myconf="
@@ -12,9 +15,6 @@ myconf="
   --mandir=/usr/share/man
   --confdir=/etc/mplayer2
   --codecsdir=/usr/lib/win32
-
-  --disable-gui
-  --enable-largefiles
 
   --disable-lirc
   --disable-lircc
@@ -64,15 +64,14 @@ myconf="
   --disable-v4l2
   --disable-vesa
   --disable-xv
-  --disable-xvmc
 
   --disable-arts
   --disable-alsa
   --disable-coreaudio
   --disable-dart
+  --disable-esd
   --disable-jack
   --disable-kai
-  --disable-pulse
   --disable-sgiaudio
   --disable-sunaudio
 
@@ -115,6 +114,6 @@ src_install() {
 
 	insinto /etc/mplayer2
 	newins ${S}/etc/example.conf mplayer.conf
-	doins ${S}/etc/{codecs,input,menu}.conf
+	doins ${S}/etc/{codecs,input}.conf
 	make_etc_defaults /etc/mplayer2
 }
