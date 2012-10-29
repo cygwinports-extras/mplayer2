@@ -1,10 +1,17 @@
-GIT_URI="git://git.mplayer2.org/mplayer2.git"
-inherit git
-
-DESCRIPTION="Multimedia player (fork of MPlayer)"
+NAME="mplayer2"
+VERSION=20121029
+RELEASE=1
+CATEGORY="Audio Video"
+SUMMARY="Multimedia player (fork of MPlayer)"
+DESCRIPTION="mplayer2 is an advanced general-purpose video player. A fork of the
+original MPlayer project, it contains significant further development and
+supports a number of features not available in other Unix players."
 HOMEPAGE="http://www.mplayer2.org/"
 #SRC_URI="http://ftp.mplayer2.org/pub/release/${P}.tar.xz"
-PATCH_URI="20120128-cygwin.patch"
+PATCH_URI="20121029-cygwin.patch
+           20120602-mingw64-w32api.patch"
+GIT_URI="git://git.mplayer2.org/mplayer2.git"
+inherit git
 
 # generally only disable undesired components; let autodetect do the rest
 myconf="
@@ -31,7 +38,6 @@ myconf="
   --disable-pvr
   --disable-winsock2_h
 
-  --disable-cdparanoia
   --disable-live
   --disable-macosx-finder
   --disable-macosx-bundle
@@ -56,7 +62,6 @@ myconf="
   --disable-ggi
   --disable-ggiwmh
   --disable-ivtv
-  --disable-kva
   --disable-s3fb
   --disable-svga
   --disable-tdfxfb
@@ -65,14 +70,9 @@ myconf="
   --disable-vesa
   --disable-xv
 
-  --disable-arts
   --disable-alsa
   --disable-coreaudio
-  --disable-dart
-  --disable-esd
   --disable-jack
-  --disable-kai
-  --disable-sgiaudio
   --disable-sunaudio
 
   --enable-runtime-cpudetection
