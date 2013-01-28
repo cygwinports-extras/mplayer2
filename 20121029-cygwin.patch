@@ -77,6 +77,17 @@
  #include <mpg123.h>
  
  /* Enable faster mode of operation with newer libmpg123, avoiding
+--- origsrc/mplayer2/mangle.h	2013-01-28 03:26:35.000000000 -0600
++++ src/mplayer2/mangle.h	2013-01-28 03:37:53.940910100 -0600
+@@ -31,7 +31,7 @@
+ #define attribute_used
+ #endif
+ 
+-#if defined(_WIN32) || defined(__APPLE__)
++#if ((defined(_WIN32) || defined(__CYGWIN__)) && defined(__i386)) || defined(__APPLE__)
+ #define EXTERN_PREFIX "_"
+ #else
+ #define EXTERN_PREFIX ""
 --- origsrc/mplayer2/mplayer.c	2012-10-29 01:19:38.020346200 -0500
 +++ src/mplayer2/mplayer.c	2012-10-29 00:59:46.717037300 -0500
 @@ -29,7 +29,7 @@
