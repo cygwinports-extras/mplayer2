@@ -137,6 +137,18 @@
  	/* Hack to get fonts etc. loaded outside of Cygwin environment. */
  	{
  		int i,imax=0;
+--- origsrc/mplayer2/stream/stream_file.c	2013-09-25 03:55:44.000000000 -0500
++++ src/mplayer2/stream/stream_file.c	2013-09-25 05:05:16.070859000 -0500
+@@ -24,6 +24,9 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <errno.h>
++#if HAVE_SETMODE
++#include <io.h>
++#endif
+ 
+ #include "osdep/io.h"
+ 
 --- origsrc/mplayer2/stream/stream_vcd.c	2012-10-29 01:19:38.020346200 -0500
 +++ src/mplayer2/stream/stream_vcd.c	2012-10-29 00:59:46.000000000 -0500
 @@ -154,7 +154,7 @@ static int open_s(stream_t *stream,int m
