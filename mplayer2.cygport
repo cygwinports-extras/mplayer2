@@ -1,5 +1,5 @@
 NAME="mplayer2"
-VERSION=20130128
+VERSION=20130428
 RELEASE=1
 CATEGORY="Audio Video"
 SUMMARY="Multimedia player (fork of MPlayer)"
